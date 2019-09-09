@@ -17,18 +17,19 @@ using namespace std;
 
 
 float raiz(int num, int r){
-	if(num==1){
-		return 1;
-	}else{
+	
             float a = ((num/r)+r)/2;
             float b = ((num/a)+a)/2;
-            
-            while((a-b)>0.0001){
-                a = ((num/b)+b)/2;
-                b = ((num/a)+a)/2;
+            float resta= a-b;
+            if(resta<0.000001){
+                return b;
             }
-            return b;
-	}
+            else{
+                r=b;
+                raiz(num, r);
+            }
+          
+	
 }
 
 
@@ -38,10 +39,12 @@ int main()
     int numero;
     cout<<"Ingrese un numero entero: ";
     cin>>numero;
-    
+    if(numero<0){
+      cout<<"Solo numeros positivos";  
+    }else{
     float r = raiz(numero,1);
 	
     cout << "Resultado: " << r << endl;
-	
+    }
 	
 }
