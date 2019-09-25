@@ -1,0 +1,11 @@
+-> A-B/(C*D$E)
+A-B/(C*DE$)  convertir la potencia
+A-B/(CDE$*)  convertir la multiplicacion
+A-BCDE$*/    convertir la division
+ABCDE$*/-    convertir la resta
+
+-> ((A+B)*C-(D-E))$(F+G)
+((AB+)*C-(DE-))$(F+G) convertir la suma y resta de los parentesis
+AB+C*DE--$(F+G)   convertir la multiplicacion
+AB+C*DE--$(FG+)   convertir la suma
+AB+C*DE--FG+$	  convertir la potencia	
