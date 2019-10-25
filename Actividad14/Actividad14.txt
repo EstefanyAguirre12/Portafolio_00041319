@@ -1,0 +1,69 @@
+Arbol #1
+
+Parte 1
+Raiz A
+Ramas B, D, C, E
+Hojas G, H, I, F
+
+Parte 2
+Niveles
+A:0, B:1, C:1, D:2, E:2, F:2, G:3, H:3, I:3
+
+Parte 3
+Profundidad: 3 
+Peso: 9 
+Orden: 2
+
+Parte 4
+SubArbol: E, H, I
+
+Parte 5
+No lleno
+
+Parte 6
+No perfecto
+
+Parte 7
+Pre-orden: A, B, D, G, C, E, H, I, F
+Post-orden: G, D, B, H, I, E, F, C, A
+In-orden: G, D, B, A, H, E, I, C, F
+
+Arbol #2
+
+Parte 1
+Raiz A
+Ramas B, C, D, E, F, H
+Hojas I, J, G, K, L
+
+Parte 2
+Niveles
+A:0, B:1, C:2, D:2, E:3, F:3, G:3, H:3, I:4, J:4, K:4, L:4
+
+Parte 3
+Profundidad: 4
+Peso: 12
+Orden: 2
+
+Parte 4
+SubArbol: H, K, L
+
+Parte 5
+No lleno
+
+Parte 6
+No perfecto
+
+Parte 7
+Pre-orden: A, B, C, E, I, F, J, D, G, H, K ,L
+Post-orden: I, E, J, F, C, G, K, L, H, D, B, A
+In-orden: I, E, C, J, F, B, A, G, K, H, L, D
+
+
+
+
+
+
+
+
+
+
