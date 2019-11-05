@@ -110,6 +110,62 @@ void postorden(Arbol a){
     }
 }
 
+int par = 0, impar=0;
+void Nodos(Arbol a){
+    Arbol p=a;
+    if(a != NULL){
+        if(p->info%2 == 0){
+            par++;
+        }else{
+            impar++;
+        }
+        Nodos(a->izq);
+        Nodos(a->der);
+    }
+}
+
+int ceros = 0, positivos=0, negativos=0;
+void Nodoscpn(Arbol a){
+    if(a != NULL){
+        if(a->info == 0){
+            ceros++;
+        }else if(a->info>0){
+            positivos++;
+        }else{
+            negativos++;
+        }
+        Nodoscpn(a->izq);
+        Nodoscpn(a->der);
+    }
+}
+
+
+int sumapares = 0;
+int sumarPar(Arbol a){
+    if(a != NULL){
+        if(a->info%2==0){
+            sumapares = sumapares + a->info;
+          
+        }
+          sumarPar(a->izq);
+            sumarPar(a->der);
+        
+    }
+}
+
+
+int sumaimpares = 0;
+int sumarImPar(Arbol a){
+    if(a != NULL){
+        if(a->info%2==0){
+            sumaimpares = sumaimpares + a->info;
+          
+        }
+        sumarImPar(a->izq);
+        sumarImPar(a->der);
+        
+    }
+}
 void recorrerArbol(Arbol a){
     cout << "Recorrido PRE orden:"; preorden(a); cout << endl;
     cout << "Recorrido IN orden:"; inorden(a); cout << endl;
@@ -127,16 +183,27 @@ int main(){
     do{
         int opcion = 0;
         cout << "Menu: \n\t1) Agregar\n\t2) Recorrer"
-            << "\n\t3) Cantidad de niveles\n\t4) Salir\n\tOpcion elegida: ";
+            << "\n\t3) Cantidad de nodos par  e impar\n\t4) Suma de pares"
+            << "\n\t5) Suma de impares\n\t6) Cantidad de ceros, positivos y negativos\n\t7) Salir\n\tOpcion elegida: ";
         cin >> opcion;
         switch(opcion){
             case 1: agregarNodo(arbol);
             break;
             case 2: recorrerArbol(arbol);
             break;
-            case 3: cout<<"\nCantidad de niveles: "<<altura(arbol)<<endl;
+            case 3: Nodos(arbol);
+                    cout<<"\nPares: "<<par<<" Impares: "<<impar<<endl;
             break;
-            case 4: continuar = false; 
+            case 4: sumarPar(arbol);
+                    cout<<"\nSuma par: "<<sumapares<<endl;
+            break;
+            case 5: sumarImPar(arbol);
+                    cout<<"\nSuma impar: "<<sumaimpares<<endl;
+            break;
+            case 6: Nodoscpn(arbol);
+                    cout<<"\nCeros: "<<ceros<<" Positivos: "<<positivos<<" Negativos: "<<negativos<<endl;
+            break;
+            case 7: continuar = false; 
             break;
             default: cout << "Opcion erronea!" << endl;
             break;
